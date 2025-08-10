@@ -240,6 +240,67 @@ Write  a  program  to  determine  three  sides  form  a  triangle  or  not
 '''
 
 
+
+
+
+
+
+#### ANSWERE 
+
+
+
+import math
+
+a = float(input('Enter the length of side a: '))
+b = float(input('Enter the length of side b: '))
+c = float(input('Enter the length of side c: '))
+
+if (a + b > c) and (a + c > b) and (b + c > a):
+    print('The sides can form a triangle.')
+    if a == b and b == c:
+        print('The triangle is an EQUILATERAL triangle.')
+        area = (math.sqrt(3) / 4) * (a ** 2)
+        print('Area:', round(area, 2))
+        perimeter = a + b + c
+        print('Perimeter:', round(perimeter, 2))
+
+    elif a == b or a == c or b == c:
+        print('The triangle is an ISOSCELES triangle.')
+        perimeter = a + b + c
+        print('Perimeter:', round(perimeter, 2))
+
+    else:
+        print('The triangle is a SCALENE triangle.')
+        perimeter = a + b + c
+        print('Perimeter:', round(perimeter, 2))
+        s = (a + b + c) / 2
+        area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+        print('Area:', round(area, 2))
+
+else:
+    print('The sides CANNOT form a triangle.')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #################################################################################################################################################################################
 
 
@@ -266,7 +327,33 @@ Write  a  program  to  determine  roots  of  a  quadtratic  equation  a * x ^ 2 
 
 
 
-
+### ANSWERE 
+import math
+a = int(input()
+b = int(input()
+c = int(input()
+if a == 0:
+	print()
+	exit()
+disc = b **2- 4*a*c
+if disc > 0:
+	print('real and distinct')
+	root1= (-b + sqrt(disc))/2*a
+	root2 =(-b - sqrt(disc))/2*a
+	print(f'root1 : {root1:.2f}
+	print(f'root2 : {root2:.2f}
+if disc < 0:
+	print('complex or imaginary)
+	real = -b/2*a
+	imag = math.sqrt(-disc) /2*a
+	print(f'root1 : {root1:.2f}
+	print(f'root2 : {root2:.2f}
+else:
+	print('real and same')
+	root = - b / 2*a
+	print(f'root:{root:.2f})
+	print(f'root1 :{root}')
+	print(f'root2:{root}')
 
 
 
@@ -289,6 +376,30 @@ Center  is  origin  and  radius  is  'r'
 
 4) Where  is  the  point  if  distance  and  raidus   are  same ?  ---> On  the  circle
 '''
+
+## ANSWERE 
+
+x = float(input('Enter the x-coordinate of the point: '))
+y = float(input('Enter the y-coordinate of the point: '))
+r = float(input('Enter the radius of the circle: '))
+
+distance_squared = x ** 2 + y ** 2
+radius_squared = r ** 2
+
+if distance_squared > radius_squared:
+    print(f'The point ({x}, {y}) is OUTSIDE the circle.')
+elif distance_squared < radius_squared:
+    print(f'The point ({x}, {y}) is INSIDE the circle.')
+else:
+    print(f'The point ({x}, {y}) is ON the circle.')
+
+
+
+
+
+
+
+
 
 
 #################################################################################################################################################################################
@@ -379,13 +490,54 @@ units = int(input('Enter  units :   '))  #  75
 match  units // 100:
 	case  0:
 				cost = units * 3.00
+####################### ANWSERE
+
+
+units = int(input('Enter the units:'))
+match units//100:
+	case 0 :
+		cost = units * 3.00
+	case 1 :
+		cost = 100 * 3.00 + (units - 100)*3.50
+	case 2 | 3 :
+		cost = 100 * 3.00 + 100 * 3.50 + (units - 100) * 4.00
+	case 4 | 5 | 6 :
+		cost = 100 * 3.00 + 100 * 3.50 + 200 * 4.00 + (units - 400 ) * 4.50
+	case _ :
+		print('hello')
+		cost = 100 * 3.00 + 100 * 3.50 + 200 * 4.00 + (units - 400 ) * 4.50
+print('bill amount :',cost)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #################################################################################################################################################################################
 a = [25 , 10.8 , 'Hyd' , True]
 How   to  print  each  element  of  list  in  reverse  order  with  for  each  loop  (Do  not  use  2nd  variable  and  slice)
 
+## ANSWERE 
 
+
+a = [25 , 10.8 , 'Hyd' , True]
+for x in reversed(a):
+    print(x)
+
+# Output:
+# True
+# Hyd
+# 10.8
+# 25
 #################################################################################################################################################################################
 
 
@@ -394,6 +546,29 @@ a = [25 , 10.8 , 'Hyd' , True]
 print('Indexed for loop')
 for x in a:
 	print(x)
+
+
+### ANSWERE 
+
+a = [25 , 10.8 , 'Hyd' , True]
+print('Indexed for loop')
+
+for i in range(len(a) - 1, -1, -1):
+    print(a[i])
+
+# Output:
+# True
+# Hyd
+# 10.8
+# 25
+
+
+
+
+
+
+
+
 #################################################################################################################################################################################
 
 
@@ -418,6 +593,23 @@ print('3rd  list : ' , c)
 How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  for  each  loop (Do  not  use  2nd  variable)
 
 
+##  ANSWERE 
+
+
+a = eval(input('Enter 1st list : '))
+b = eval(input('Enter 2nd list : '))
+c = []
+for i in range(min(len(a), len(b))):
+    c.append(a[i] + b[i])
+
+print('3rd list : ' , c)
+
+
+
+
+
+
+
 
 #################################################################################################################################################################################
 
@@ -431,22 +623,26 @@ How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed 
 How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop   without  using  2nd  variable  and  slice
 
 
-
+## How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed  based  for  loop
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+print('Indexed for loop')
+for i in range(2, 5):
+    print(a[i])
+## How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop   without  using  2nd  variable  and  slice
+ 
+NOT POSSIBLE FOR EACH LOOP WITHOUT USING 2ND VARIABLE AND SLICE
 #################################################################################################################################################################################
 
 
 ########## Question ##################
 
-#  Tricky  program
-#  Find  outputs  (Home  work)
 a = [10 , 20 , 15 , 18]
-for  i  in  range(len(a)):
-	a[i] +=  1
-print('a :  ' , a)
+for i in range(len(a)):
+	a[i] += 1
+print('a : ' , a) # a :  [11, 21, 16, 19]
+
 b = [10 , 20 , 15 , 18]
-for  x  in   b:
+for x in b:
 	x += 1
-print('b :  ' ,  b)
-
-
+print('b : ' , b) #  b :  [10, 20, 15, 18]
 #################################################################################################################################################################################
